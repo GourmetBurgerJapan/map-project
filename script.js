@@ -75,12 +75,11 @@ function renderMarkers() {
       </div>
     `);
 
-    const el = document.createElement('div');
-    el.style.backgroundColor = color;
-    el.style.width = "20px";
-    el.style.height = "20px";
-    el.style.borderRadius = "50%";
-    el.style.cursor = "pointer";
+  const el = document.createElement('img');
+  el.src = 'assets/burger.png'; // ← ハンバーガーアイコンのパス
+  el.style.width = '30px';      // お好みのサイズ
+  el.style.height = '30px';
+  el.style.cursor = 'pointer';
 
     const marker = new mapboxgl.Marker(el)
       .setLngLat([store.lng, store.lat])
@@ -98,3 +97,4 @@ function renderMarkers() {
     map.fitBounds(bounds, { padding: 50 });
   }
 }
+
